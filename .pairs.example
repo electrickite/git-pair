@@ -1,0 +1,12 @@
+PAIR_KEY_FILE="/home/myuser/.ssh/pair_id"
+PAIR_KEY_DEFAULT="/home/myuser/.ssh/id_rsa"
+
+PAIR_USER_WR_NAME="White Rabbit"
+PAIR_USER_WR_EMAIL="rabbit@example.com"
+#PAIR_USER_WR_KEY="/home/myuser/.ssh/white-rabbit.key"
+
+PAIR_USER_CC_NAME="Cheshire Cat"
+PAIR_USER_CC_EMAIL="cat@example.com"
+
+PAIR_USER_MH_NAME="Mad Hatter"
+PAIR_USER_MH_EMAIL="hatter@example.com"
