@@ -24,7 +24,7 @@ list of shell variables with the following format:
 
 Where "U1" and "U2" are user identifiers to be used in the pairing commands.
 
-### SSH Keys
+### SSH keys
 
 git-pair can optionally switch SSH keys when paring. To enable this feature, you
 will need to add a stanza to `~/.ssh/config` for each remote git host:
@@ -49,6 +49,13 @@ of the public key if it shares the same file name with a `.pub` extension.
 `.pub` public key will be deleted and replaced by a symlink during the `pair`
 command. Be sure there is no file at that path!
 
+### Taggeg email
+
+git-pair can optionally set the commit author email to an address shared by the
+pairing team. Set `PAIR_GROUP_EMAIL` to a shared email address, ex:
+`dev@example.com`. This will create commits with email addresses such as
+`dev+U1+U2@example.com`.
+
 Use
 ---
 
@@ -61,7 +68,7 @@ Start pairing with users identified by "U1" and "U2" in the `.pairs` file:
     $ pair U1 U2
 
 This will set the commit author name to "User 1 and User 2" and the author email
-to "user1@example.com"
+to "user1@example.com" (unless `PAIR_GROUP_EMAIL` is set; see above).
 
 Disable pairing with:
 

@@ -26,14 +26,20 @@ setpair() {
   user1_name_var="PAIR_USER_$1_NAME"
   user1_email_var="PAIR_USER_$1_EMAIL"
   pair="$1"
-  email="${!user1_email_var}"
   name="${!user1_name_var}"
+  email="${!user1_email_var}"
 
   if [ ! -z "$2" ]; then
     user2_name_var="PAIR_USER_$2_NAME"
     user2_email_var="PAIR_USER_$2_EMAIL"
     pair="$pair+$2"
     name="$name and ${!user2_name_var}"
+
+    if [ ! -z "$PAIR_GROUP_EMAIL" ]; then
+      email_account="${PAIR_GROUP_EMAIL%@*}"
+      email_domain="${PAIR_GROUP_EMAIL#*@}"
+      email="$email_account+$pair@$email_domain"
+    fi
   fi
 
   git config user.pair "$pair" \

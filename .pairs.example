@@ -1,6 +1,8 @@
 PAIR_KEY_FILE="/home/myuser/.ssh/pair_id"
 PAIR_KEY_DEFAULT="/home/myuser/.ssh/id_rsa"
 
+PAIR_GROUP_EMAIL="dev@example.com"
+
 PAIR_USER_WR_NAME="White Rabbit"
 PAIR_USER_WR_EMAIL="rabbit@example.com"
 #PAIR_USER_WR_KEY="/home/myuser/.ssh/white-rabbit.key"
