@@ -49,7 +49,7 @@ of the public key if it shares the same file name with a `.pub` extension.
 `.pub` public key will be deleted and replaced by a symlink during the `pair`
 command. Be sure there is no file at that path!
 
-### Taggeg email
+### Tagged email
 
 git-pair can optionally set the commit author email to an address shared by the
 pairing team. Set `PAIR_GROUP_EMAIL` to a shared email address, ex:
