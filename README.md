@@ -24,8 +24,10 @@ list of shell variables with the following format:
 
 Where "U1" and "U2" are user identifiers to be used in the pairing commands.
 
-git-pair can optionally manage SSH keys. To enable this feature, you will need
-to add a stanza to `~/.ssh/config` for your git remote:
+### SSH Keys
+
+git-pair can optionally switch SSH keys when paring. To enable this feature, you
+will need to add a stanza to `~/.ssh/config` for each remote git host:
 
     Host git-server.example.com
       IdentityFile    ~/.ssh/pair_id
@@ -39,6 +41,13 @@ Then add the following to your `.pairs` file:
 And finally the SSH key file for each user is set with:
 
     PAIR_USER_U1_KEY="/home/myuser/.ssh/user1_id"
+
+Only a private key is necessary for each user, but git-pair will also make use
+of the public key if it shares the same file name with a `.pub` extension.
+
+**NOTE:** The file specified in `PAIR_KEY_FILE` as well as its corresponding
+`.pub` public key will be deleted and replaced by a symlink during the `pair`
+command. Be sure there is no file at that path!
 
 Use
 ---
@@ -62,3 +71,19 @@ Amend the last commit with the current pair (when you forget to set the pair
 before committing.)
 
     $ pair!
+
+Acknowledgements
+----------------
+
+  * Created by: [Corey Hinshaw](1)
+  * Inspired by: [Henrik Nyh](2)
+
+License
+-------
+
+Released into the public domain.  See the [LICENSE](1) file for further details.
+
+
+[1]: https://github.com/electrickite
+[2]: https://github.com/henrik
+[3]: https://github.com/electrickite/git-pair/blob/master/LICENSE
