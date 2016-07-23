@@ -58,14 +58,20 @@ setpairkey() {
   setpairconfig
   if [ ! -z "$PAIR_KEY_FILE" ]; then
     rm -f "$PAIR_KEY_FILE"
+    rm -f "$PAIR_KEY_FILE.pub"
 
-    user1_key_var="PAIR_USER_$1_KEY"
-    user_key="${!user1_key_var}"
+    if [ ! -z "$1" ]; then
+      user_key_var="PAIR_USER_$1_KEY"
+      key="${!user1_key_var}"
+    else
+      key="$PAIR_KEY_DEFAULT"
+    fi
 
-    if [ ! -z "$1" ] && [ ! -z "$user_key" ]; then
-      ln -s "$user_key" "$PAIR_KEY_FILE"
-    elif [ ! -z "$PAIR_KEY_DEFAULT" ]; then
-      ln -s "$PAIR_KEY_DEFAULT" "$PAIR_KEY_FILE"
+    if [ -f "$key" ]; then
+      ln -s "$key" "$PAIR_KEY_FILE"
+      if [ -f "$key.pub" ]; then
+        ln -s "$key.pub" "$PAIR_KEY_FILE.pub"
+      fi
     fi
   fi
 }
