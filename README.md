@@ -75,13 +75,13 @@ before committing.)
 Acknowledgements
 ----------------
 
-  * Created by: [Corey Hinshaw](1)
-  * Inspired by: [Henrik Nyh](2)
+  * Created by: [Corey Hinshaw][1]
+  * Inspired by: [Henrik Nyh][2]
 
 License
 -------
 
-Released into the public domain.  See the [LICENSE](1) file for further details.
+Released into the public domain.  See the [LICENSE][3] file for further details.
 
 
 [1]: https://github.com/electrickite
