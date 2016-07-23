@@ -40,15 +40,6 @@ setpair() {
   && git config user.email "$email" \
   && git config user.name "$name"
 
-  user1_key_var="PAIR_USER_$1_KEY"
-  key="${!user1_key_var}"
-  if [ ! -z "$PAIR_KEY_FILE" ] && [ -f "$PAIR_KEY_FILE" ]; then
-    rm -f "$PAIR_KEY_FILE"
-  fi
-  if [ ! -z "$PAIR_KEY_FILE" ] && [ ! -z "$key" ]; then
-    ln -s "$key" "$PAIR_KEY_FILE"
-  fi
-
   setpairkey $1
 
   pair
