@@ -59,7 +59,7 @@ setpairkey() {
 
     if [ ! -z "$1" ]; then
       user_key_var="PAIR_USER_$1_KEY"
-      key="${!user1_key_var}"
+      key="${!user_key_var}"
     else
       key="$PAIR_KEY_DEFAULT"
     fi
