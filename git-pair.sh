@@ -4,7 +4,13 @@ getpair() { echo "`git config user.name` <`git config user.email`>"; }
 
 pair() {
   if [ -z "$1" ]; then
-    echo Committing as: `getpair`
+    git rev-parse --is-inside-work-tree > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+      echo "Not a git repository"
+      return 1
+    else
+      echo Committing as: `getpair`
+    fi
   else
     setpair "$1" "$2"
   fi

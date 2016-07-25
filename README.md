@@ -79,6 +79,12 @@ before committing.)
 
     $ pair!
 
+Set the pair SSH key using `setpairkey`. This is normally done during the `pair`
+command, but setting the key without touching the author configuration can be
+useful in certain situations. (Cloning a repo, for example)
+
+    $ setpairkey U1
+
 Acknowledgements
 ----------------
 
